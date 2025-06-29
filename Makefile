@@ -13,6 +13,7 @@ SRCS_ASM	= ft_strlen.s \
             ft_strcpy.s \
 			ft_strcmp.s \
 			ft_write.s \
+			ft_read.s \
 
 OBJS_C		= $(SRCS_C:.c=.o)
 OBJS_ASM	= $(patsubst %.s,%.o,$(filter %.s,$(SRCS_ASM)))
