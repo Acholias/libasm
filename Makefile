@@ -9,10 +9,10 @@ ASMFLAGS	= -f elf64 -g
 RM			= rm -f
 
 SRCS_C		= main.c
-SRCS_ASM	= ft_strlen.asm \
-            ft_strcpy.asm \
-			ft_strcmp.asm \
-			ft_write.asm \
+SRCS_ASM	= ft_strlen.s \
+            ft_strcpy.s \
+			ft_strcmp.s \
+			ft_write.s \
 
 OBJS_C		= $(SRCS_C:.c=.o)
 OBJS_ASM	= $(patsubst %.s,%.o,$(filter %.s,$(SRCS_ASM)))
