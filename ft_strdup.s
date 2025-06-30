@@ -1,11 +1,7 @@
 ; ft_strdup
 ; char	*ft_strdup(const char *s)
 
-section .note.GNU-stack
-
 global	ft_strdup
-
-section .text
 
 extern	ft_strlen
 extern	malloc

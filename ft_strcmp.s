@@ -1,11 +1,9 @@
 ; ft_strcmp
 ; int	ft_strcmp(const char *s1, const char *s2)
 
-section .note.GNU-stack
 
 global	ft_strcmp
 
-section .text
 ft_strcmp:
 
 .loop:
