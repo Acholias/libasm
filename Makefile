@@ -6,7 +6,7 @@
 #    By: lumugot <lumugot@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/30 18:17:38 by lumugot           #+#    #+#              #
-#    Updated: 2025/06/30 18:19:08 by lumugot          ###   ########.fr        #
+#    Updated: 2025/06/30 18:21:13 by lumugot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,6 @@ all: $(NAME)
 $(NAME): $(OBJS_ASM)
 	@$(AR) $(NAME) $(OBJS_ASM)
 	@echo "${GREEN}Library $(NAME) created successfully.${NC}"
-	@echo "${GREEN}Test executable $(TEST_EXE) created successfully.${NC}"
 
 %.o: %.s
 	@$(ASM) $(ASMFLAGS) $< -o $@
