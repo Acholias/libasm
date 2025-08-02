@@ -6,7 +6,7 @@
 /*   By: lumugot <lumugot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 18:06:44 by lumugot           #+#    #+#             */
-/*   Updated: 2025/08/02 18:02:07 by lumugot          ###   ########.fr       */
+/*   Updated: 2025/08/02 20:05:59 by lumugot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBASM_H
 
 # include <unistd.h>
+# include <stdlib.h>
 
 // MANDATORY
 size_t  ft_strlen(const char *s);
