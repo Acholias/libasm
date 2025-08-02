@@ -15,9 +15,12 @@ ft_strdup:
 	call	malloc
 	cmp		rax, 0
 	je		.end
+	mov		r8, rax
 	mov		rdi, rax
 	pop		rsi
 	call	ft_strcpy
+	mov		rax, r8
+	jmp		.end
 
 .end:
 	ret
