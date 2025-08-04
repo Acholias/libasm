@@ -6,9 +6,9 @@ global ft_list_push_front
 extern	malloc
 
 ft_list_push_front:
-	cmp		rdi, 0
+	test	rdi, rdi
 	je		.end
-	cmp		rsi, 0
+	test	rsi, rsi
 	je		.end
 	mov		r8, rdi
 	mov		r9, rsi

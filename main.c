@@ -6,7 +6,7 @@
 /*   By: lumugot <lumugot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/01 22:34:59 by lumugot           #+#    #+#             */
-/*   Updated: 2025/08/02 20:06:42 by lumugot          ###   ########.fr       */
+/*   Updated: 2025/08/04 19:37:09 by lumugot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 int	main(void)
 {
 	char	*str;
-	str = "Testicules";
+	str = "Bonjour ca va ou pas ";
 	printf("[%ld]\n", ft_strlen(str));
 }
 
@@ -70,4 +70,10 @@ void	ft_list_remove_if(t_list **lst, void *content_ref, int (*cmp)())
 			current = current->next;
 		}
 	}
+}
+
+
+int	ft_atoi_base(const char *str, int str_base)
+{
+	
 }
