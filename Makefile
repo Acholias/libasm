@@ -19,7 +19,8 @@ SRCS_ASM	= ft_strlen.s \
 			  ft_strdup.s \
 
 SRCS_ASM_BONUS = 	ft_list_size.s \
-					ft_list_push_front.s
+					ft_list_push_front.s \
+					ft_list_remove_if.s
 
 OBJS_ASM		= $(SRCS_ASM:.s=.o)
 OBJS_ASM_BONUS	= $(SRCS_ASM_BONUS:.s=.o)
