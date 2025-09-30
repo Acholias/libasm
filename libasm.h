@@ -6,7 +6,7 @@
 /*   By: lumugot <lumugot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 18:06:44 by lumugot           #+#    #+#             */
-/*   Updated: 2025/09/27 21:47:59 by lumugot          ###   ########.fr       */
+/*   Updated: 2025/09/30 14:02:32 by lumugot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ typedef struct	s_list
 }	t_list;
 
 void	ft_list_push_front(t_list **lst, void *data);
+int		ft_list_size(t_list *list);
 void	ft_list_remove_if(t_list **begin_list, void *content_ref, int (*cmp)());
 
 

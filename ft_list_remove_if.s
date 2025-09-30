@@ -5,42 +5,46 @@ global	ft_list_remove_if
 extern	free
 
 ft_list_remove_if:
-	mov		rbx, rdi			;garder begin_list pour modifier *begin_list
-	mov		r12, [rdi]			;current = *begin_list
-	xor		r13, r13			;prev = NULL
+	test	rdi, rdi			; si rdi == NULL return 
+	je		.end		
+	mov		rbx, rdi			; garder begin_list pour modifier *begin_list
+	mov		r12, [rdi]			; current = *begin_list
+	xor		r13, r13			; prev = NULL
+	mov		r15, rsi
+	mov		r14, rdx
 
 .loop:
-	test	r12, r12			;si current == NULL, fin
+	test	r12, r12			; si current == NULL, fin
 	je		.end
 
-	mov		rdi, [r12]			;rdi = current->data
-	mov		rsi, rsi			;rsi = content_ref
-	mov		rax, rdx			;rax = cmp
-	call	rax					;appel cmp (current->data, content_ref)
-	test	rax, rax			;si cmp != 0, on ne supprime pas, mais il faut relink les nodes
-	jne		.no_remove
+	mov		rdi, [r12]			; rdi = current->data
+	mov		rsi, r15			; rsi = content_ref
+	call	r14			
+	test	rax, rax
+	jne		.no_remove					
 
-	mov		r14, [r12+8]		;tmp = current->next
-	test	r13, r13			;si prev == NULL
+	mov		rax, [r12 + 8]
+	test	r13, r13
 	jne		.not_first
-	mov		[rbx], r14			;*begin_list = tmp
+	mov		[rbx], rax
 	jmp		.free_node
 
 .not_first:
-	mov		[r13 + 8], r14		;prev->next = tmp
+	mov		[r13 + 8], rax
 
 .free_node:
-	mov		rdi, [r12]			;free(current->data)
+	push	rax
+	mov		rdi, [r12]
 	call	free
-	mov		rdi, r12			;free(current)
+	mov		rdi, r12
 	call	free
-	mov		r12, r14			;current = tmp
+	pop		r12
 	jmp		.loop
 
 .no_remove:
-	mov		r13, r12			;prev = current
-	mov		r12, [r12+8]		;current = current->next
+	mov		r13, r12
+	mov		r12, [r12 + 8]
 	jmp		.loop
 
 .end:
-	ret							;return
+	ret							; return

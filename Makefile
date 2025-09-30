@@ -1,7 +1,7 @@
 NAME		= libasm.a
 
 CC			= gcc
-CFLAGS		= -Wall -Wextra -Werror -g
+CFLAGS		= -Wall -Wextra -Werror -g - lbsd
 
 AR			= ar
 ARFLAGS		= rcs
@@ -16,24 +16,29 @@ SRCS_ASM	= ft_strlen.s \
 			  ft_strcmp.s \
 			  ft_write.s \
 			  ft_read.s \
-			  ft_strdup.s \
+			  ft_strdup.s
 
-SRCS_ASM_BONUS = 	ft_list_size.s \
-					ft_list_push_front.s \
+SRCS_ASM_BONUS = ft_list_size.s \
 					ft_list_remove_if.s
 
 OBJS_ASM		= $(SRCS_ASM:.s=.o)
 OBJS_ASM_BONUS	= $(SRCS_ASM_BONUS:.s=.o)
 
 all: $(NAME)
+	@echo "$$BANNER"
+	@sleep 1
+	@clear
+	@echo "$$CREDIT"
 
 $(NAME): $(OBJS_ASM)
-	@echo "$$BANNER"
 	@$(AR) $(ARFLAGS) $(NAME) $(OBJS_ASM)
 
 bonus: $(OBJS_ASM) $(OBJS_ASM_BONUS)
-	@echo "$$BANNER_BONUS"
 	@$(AR) $(ARFLAGS) $(NAME) $(OBJS_ASM) $(OBJS_ASM_BONUS)
+	@echo "$$BANNER_BONUS"
+	@sleep 1
+	@clear
+	@echo "$$CREDIT"
 
 %.o: %.s
 	@$(ASM) $(ASMFLAGS) $< -o $@

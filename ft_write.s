@@ -6,6 +6,8 @@ extern	__errno_location
 global	ft_write
 
 ft_write:
+	test		rdi, rdi
+	je			.end
 	mov			rax, 1
 	syscall
 	cmp			rax, 0
